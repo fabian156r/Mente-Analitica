@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen: Mente Analítica</title>
+    <link rel="icon" href="img/Transfer.jpeg" type="image/jpeg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="logo-data.js"></script>
+</head>
+<body>
+    <div class="bg-decor" aria-hidden="true">
+        <span class="blob blob-1"></span>
+        <span class="blob blob-2"></span>
+        <span class="blob blob-3"></span>
+    </div>
+
+    <div class="app-container">
+        <div id="start-screen" class="screen active">
+            <div class="start-logo"><img src="img/Transfer.jpeg" alt="Transfergraphic"></div>
+            <h1>Examen de <span class="text-gradient">Mente Analítica</span></h1>
+            <p class="subtitle">Evalúa cómo piensas antes de actuar para interpretar cifras y otra información.</p>
+
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="username">Nombre del Participante</label>
+                    <input type="text" id="username" placeholder="Ingresa tu nombre..." required autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <label for="exam-date">Fecha</label>
+                    <input type="date" id="exam-date">
+                </div>
+            </div>
+
+            <button id="start-btn">Comenzar Examen <span class="btn-arrow">→</span></button>
+
+            <div class="meta-row">
+                <div class="meta-chip">📝 10 preguntas</div>
+                <div class="meta-chip">⏱️ 40s por pregunta</div>
+            </div>
+        </div>
+
+        <div id="quiz-screen" class="screen">
+            <div class="progress-track">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+
+            <div class="quiz-header">
+                <span id="question-counter">Pregunta 1 de 10</span>
+                <div id="timer-display" class="timer-ring reading-mode">
+                    <span id="timer-text">5</span>
+                </div>
+            </div>
+
+            <h2 id="question-text">¿Pregunta?</h2>
+
+            <div id="reading-message">
+                <div class="reading-dots"><span></span><span></span><span></span></div>
+                <p>Lee la pregunta con calma. Las opciones aparecerán en breve...</p>
+            </div>
+
+            <div id="options-container" class="options-grid hidden"></div>
+            <div id="feedback-message" class="feedback hidden"></div>
+        </div>
+
+        <div id="result-screen" class="screen">
+            <div id="result-emoji" class="result-emoji">🏆</div>
+            <h2>¡Examen Finalizado!</h2>
+
+            <div id="score-ring" class="score-ring">
+                <span id="score-ring-text">0/10</span>
+            </div>
+
+            <p id="final-score-text"></p>
+            <button id="download-pdf-btn">📄 Descargar Reporte PDF</button>
+            <button id="restart-btn" class="btn-secondary">🔄 Volver a Intentar</button>
+        </div>
+
+        <div class="brand-footer"><img src="img/Transfer.jpeg" alt="Transfergraphic"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
